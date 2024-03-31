@@ -6,7 +6,7 @@ on:
       - ".github/workflows/kernel.yml"
   workflow_dispatch:
 #  schedule:
- #   - cron: "14 13 * * 5"
+#    - cron: "14 13 * * 5"
 
 jobs:
   Read-configuration:
@@ -288,8 +288,8 @@ jobs:
             sed -i "$row3 i\        if (cft->ss && (cgrp->root->flags & CGRP_ROOT_NOPREFIX) && !(cft->flags & CFTYPE_NO_PREFIX)) {" kernel/cgroup/cgroup.c
             echo "🎖️ Modify kernel/cgroup/cgroup.c"
           fi
-          if [ -f android-kernel/net/netfilter/xt_qtaguid.c ]; then
-            git am -s < ${{ env.WORKSPACE }}/LXC/Patches/xt_qtaguid.patch
+          if [ -f net/netfilter/xt_qtaguid.c ]; then
+            patch -p1 < ${{ env.WORKSPACE }}/Kernel/LXC/Patches/xt_qtaguid.patch
             echo "🎖️ Apply xt_qtaguid.patch"
           fi
 
