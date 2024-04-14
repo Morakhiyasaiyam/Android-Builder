@@ -1,7 +1,7 @@
 [
   {
     "kernelSource": {
-      "name": "XiaomiRedmiK20P (Neutron) ",
+      "name": "XiaomiRedmiK20P",
       "repo": "https://github.com/onettboots/bool-x_xiaomi_raphael",
       "branch": "14-LGC",
       "device": "raphael",
