@@ -1,0 +1,34 @@
+[
+  {
+    "kernelSource": {
+      "name": "XiaomiRedmiK20P(Neutron)",
+      "repo": "https://github.com/onettboots/bool-x_xiaomi_raphael",
+      "branch": "14-LGC",
+      "device": "raphael",
+      "defconfig": "raphael_defconfig"
+    },
+    "enableCcache": true,
+    "toolchains": [
+      {
+        "name": "neutron-clang",
+        "binaryEnv": [
+          "bin"
+        ]
+      }
+    ],
+    "params": {
+      "ARCH": "arm64",
+      "CC": "neutron-clang/bin/clang",
+      "externalCommands": {
+        "CROSS_COMPILE": "neutron-clang/bin/aarch64-linux-gnu-",
+        "CROSS_COMPILE_ARM32": "neutron-clang/bin/arm-linux-gnueabi-"
+      }
+    },
+    "AnyKernel3": {
+      "use": true,
+      "release": true
+    },
+    "enableKernelSU": true,
+    "enableLXC": true
+  }
+]
