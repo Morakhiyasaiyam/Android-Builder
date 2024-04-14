@@ -175,7 +175,7 @@ jobs:
               rm $filename
 
               echo "🤔 Download $toolchain_name => ($toolchain_url)"
-            else if echo $toolchain | jq -e 'has("repo")' > /dev/null; then
+            elif echo $toolchain | jq -e 'has("repo")' > /dev/null; then
               # If from git
               toolchain_repo=$(echo $toolchain | jq -r ".repo")
               toolchain_branch=$(echo $toolchain | jq -r ".branch")
